@@ -1,0 +1,28 @@
+---
+# Number of epochs per layer type training ('head', '3+', 'all')
+# Note that the number of epochs trained on that layer type is e_1, e_2 - e_1, and e_3 - e_2 if (e_1, e_2, e_3)
+num_epochs:
+  - 2 # head
+  - 4 # 3+
+  - 5 # all
+
+# Number of validation steps
+val_steps: 10
+
+# Number of steps per epoch
+# Reduce the number of epochs and increase the number of steps in order to reduce number of validations
+steps_per_epoch: 1000
+
+# Directory of weights, we can also specify 'last' in order to restore the last used weights
+# however, this does not always work reliable
+weights_path: '../weights/mask_rcnn_coco.h5'
+
+# Directory of logs
+log_dir: './logs'
+
+# Directory of which the data_sets are loaded
+data_set_dir: '../data_sets'
+
+# Directory where to dump the class ID to label mapping
+label_dir: '../labels'
+...

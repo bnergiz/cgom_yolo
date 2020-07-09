@@ -1,0 +1,20 @@
+---
+# Detection confidence required in order for a detection to be valid
+detection_min_confidence: 0.9
+
+# Size of the squared dilation kernel
+dilation: 10
+
+# Directory of weights, we can also specify 'last' in order to restore the last used weights
+# however, this does not always work reliable
+weights_path: '../weights/example_tiny.h5'
+
+# Directory of logs
+log_dir: './logs'
+
+# Directory where to dump the class ID to label mapping
+label_dir: '../labels'
+
+# Image path to apply mask rcnn to
+image_path: '../data_sets/shot_bottle_2/val/image_4.JPG'
+...

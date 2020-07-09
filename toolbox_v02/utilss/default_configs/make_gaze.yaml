@@ -1,0 +1,41 @@
+---
+# Detection confidence required in order for a detection to be valid
+detection_min_confidence: 0.6
+
+# Number of frames to pull from a fixation
+# If the number is larger than the number of frames in the fixation, the entire fixation is used
+# Hence min(number of frames in fixation, desired number of frames to use)
+# The number can be set to 0 (num_f: 0) in order to always select the central frame from the fixation
+num_f: 0
+
+# If no mask is detected, it is assumed to be BG
+# It would make sense to score the background with 1 in that case
+# However, this is a bit harsh, since missdetections have large weights as such. Hence we use something smaller
+BG_score: 0.3
+
+# Size of the squared dilation kernel
+dilation: 50
+
+# Directory of weights, we can also specify 'last' in order to restore the last used weights
+# However, this does not always work reliable
+weights_path: '../weights/example_tiny.h5'
+
+# Directory of logs
+log_dir: './logs'
+
+# Directory where to dump the class ID to label mapping
+label_dir: '/Users/berkn/Desktop/ETH/Master/Semester_2/Semester_Project/cgom_yolo/labels'
+
+# Gaze file directory
+gaze_dir: '/Users/berkn/Desktop/ETH/Master/Semester_2/Semester_Project/cgom_yolo/gaze'
+
+# Video file directory
+video_dir: '/Users/berkn/Desktop/ETH/Master/Semester_2/Semester_Project/cgom_yolo/videos'
+
+# File output directory
+file_output_dir: '../outputs/hilti/gaze'
+
+# Output directory for images, this is only for visualization
+# Can be disabled by setting image_output_dir: None
+image_output_dir: '../outputs/images'
+...

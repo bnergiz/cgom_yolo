@@ -1,0 +1,32 @@
+---
+# Detection confidence required in order for a detection to be valid
+detection_min_confidence: 0.
+
+# Number of predictions to make based on Hu moments
+num_preds: 1
+
+# Probability that an image is added to the validation set
+val_prob: 0.1
+
+# Display resolution
+res: [1024, 1024]
+
+# Directory of weights
+# Use COCO weights with basename 'mask_rcnn_coco.h5'
+weights_path: '../weights/mask_rcnn_coco.h5'
+
+# Directory of logs
+log_dir: './logs'
+
+# Directory of which the data_sets are loaded
+# The folder must have a subfolder with the labels as title, ie. cup_hand_pen
+# Note that on the slider the number will follow that order, ie. (0)BG, (1)cup, (2)hand, (3)pen
+data_set_dir: '../images'
+
+# Directory to which the final data_sets are moved
+output_dir: '../data_sets'
+
+# Dump name
+# Is automatically dumped the the output_dir folder of the corresponding dataset
+dump_name: 'via_region_data.json'
+...
